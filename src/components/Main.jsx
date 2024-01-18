@@ -14,7 +14,7 @@ function Main() {
     try {
       const response = await fetch("https://todolist240108.fly.dev/todo/todos/");
       const data = await response.json();
-      setTodos(data.data);
+      setTodos(data.data || []);
     } catch (error) {
       console.error("Error fetching todos:", error);
     }
