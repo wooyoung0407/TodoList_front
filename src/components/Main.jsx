@@ -12,7 +12,7 @@ function Main() {
 
   const fetchTodos = async () => {
     try {
-      const response = await fetch("http://localhost:5000/todo/todos");
+      const response = await fetch("https://todolist240108.fly.dev/todo/todos/");
       const data = await response.json();
       setTodos(data.data);
     } catch (error) {
@@ -24,7 +24,7 @@ function Main() {
     if (todoTitle.trim().length === 0) return;
 
     try {
-      await fetch("http://localhost:5000/todo/todos", {
+      await fetch("https://todolist240108.fly.dev/todo/todos/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -44,7 +44,7 @@ function Main() {
 
   const modifyTodo = async (id, title) => {
     try {
-      await fetch(`http://localhost:5000/todo/todos/${id}`, {
+      await fetch(`https://todolist240108.fly.dev/todo/todos/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -63,7 +63,7 @@ function Main() {
 
   const removeTodo = async (id) => {
     try {
-      await fetch(`http://localhost:5000/todo/todos/${id}`, {
+      await fetch(`https://todolist240108.fly.dev/todo/todos/${id}`, {
         method: "DELETE",
       });
 
